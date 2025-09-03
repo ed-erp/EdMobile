@@ -178,7 +178,7 @@ const SignInInner: React.FC = () => {
             {/* Logo */}
             <View style={styles.logoWrap}>
               <Image
-                source={require('../../Images/Logo/one.png')}
+                source={require('../../Images/Logo/one.png')} 
                 style={styles.logo}
                 resizeMode="contain"
               />
