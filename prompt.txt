@@ -1,0 +1,75 @@
+Handle API payloads safely → validate responses, set defaults, handle errors.
+
+Maintain clean styling → avoid inline styles, keep a centralized theme/colors system.
+
+Follow a clear folder structure → separate screens, components, services, utils, hooks.
+
+Use proper state management → keep local state local, use Redux/Zustand for global state.
+
+Optimize performance → use FlatList, memoization, and avoid unnecessary re-renders.
+
+Ensure responsiveness & safe area → handle different screen sizes, notches, and orientation.
+
+Secure data properly → store sensitive info in secure storage, never hardcode keys.
+
+Handle loading & error states → don’t leave blank screens, always show fallback UI.
+
+Write reusable components → avoid repetition, build common UI elements as shared components.
+
+Maintain code quality → consistent naming, TypeScript, meaningful comments, linting/formatting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 2
+Prompt for React Native UI (Figma → Code)
+I want you to act as a senior React Native developer with 10+ years of experience.
+I will provide you with a Figma design (or screenshot), and you need to generate production-ready React Native code using the React Native Paper library.
+The code must:
+Use functional components with hooks (no class components).
+Be structured, clean, and easily customizable.
+Follow React Native best practices and Paper’s theming system.
+Match the Figma design exactly in spacing, colors, typography, and layout.
+Be responsive and look good across devices.
+Include meaningful component names and comments for readability.
+⚡ Output should be:
+A self-contained React Native component.
+Using react-native-paper components (e.g., Card, TextInput, Button, Appbar).
+With inline or StyleSheet styles that replicate the Figma design.
+If the design has multiple screens, structure it as a navigation-ready setup using react-navigation.
+Before coding, briefly explain how you will map the Figma design elements to React Native Paper components.
+Then output the full code.
+
+
+
+
+
+
+//3 for funtionality adn api integreate
+Additionally, add:
+Form functionalities (state management, validation, controlled inputs).
+Dummy JSON data (simulate API response, store it locally inside the component or in a separate file).
+A useEffect hook that fetches the dummy JSON (as if from API).
+Submit/Action handlers (e.g., login, registration, form save) that log the data to console now, so I can replace them later with API calls.
+Comments showing where to replace dummy JSON with real API integration.
+⚡ Output should be:
+A self-contained React Native component.
+Using react-native-paper components (TextInput, Button, Card, Appbar, etc.).
+Dummy JSON should look realistic (e.g., user object, product list, or login response).
+Include error handling + success states with Paper’s Snackbar or Dialog.
+Before coding, briefly explain which UI parts map to which Paper components and how you’ll use dummy JSON.
+Then output the full code.
+
+
+
+

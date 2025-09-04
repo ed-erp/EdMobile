@@ -1,24 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+ 
+import { View, Image } from 'react-native';
+import { globalStyles } from '../../styles/globalStyles';
 
 const SplashScreen = () => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.label}>Splash Screen</Text>
+        <View style={[globalStyles.splashContainer]}>
+            <Image 
+              source={require('../../Images/Logo/one.png')}
+                style={{ width: 400, height: 400, resizeMode: "contain",zIndex:100 }} 
+            />
         </View>
     );
 };
 
 export default SplashScreen;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    label: {
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
-});
+ 

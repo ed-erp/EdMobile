@@ -1,97 +1,148 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+ 
+# EduMobile App
 
-# Getting Started
+A React Native mobile application with clean navigation flow and modern UI components.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Navigation Setup
 
-## Step 1: Start Metro
+This project uses React Navigation v7 with the following structure:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **Initial Route**: `LoginScreen`
+- **Navigation Flow**: 
+  - `LoginScreen` → `ForgotPasswordScreen` (via "Forgot Password?" button)
+  - `ForgotPasswordScreen` → `LoginScreen` (via back button)
+  - `LoginScreen` → `HomeScreen` (after successful sign in)
+  - `LoginScreen` → `SignUpScreen` (for new user registration)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Features
 
-```sh
-# Using npm
+- ✅ React Navigation v7 with native stack navigator
+- ✅ SafeAreaProvider for proper device safe areas
+- ✅ React Native Paper for consistent UI components
+- ✅ TypeScript support with proper navigation types
+- ✅ Clean, production-ready code structure
+- ✅ Responsive design with proper scaling
+- ✅ No console warnings or unnecessary imports
+
+## Project Structure
+
+```
+src/
+├── screens/
+│   ├── LoginScreen/          # Main login screen (initial route)
+│   ├── ForgotPasswordScreen/ # Password recovery screen
+│   ├── HomeScreen/           # Main app screen
+│   ├── SignUpScreen/         # User registration
+│   ├── CreatePasswordScreen/ # Password creation
+│   └── SplashScreen/         # App loading screen
+├── navigation/
+│   └── types.ts              # Navigation type definitions
+├── components/                # Reusable UI components
+├── constants/                 # App constants
+├── services/                  # API and business logic
+└── store/                     # State management
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- React Native CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. For iOS, install pods:
+```bash
+cd ios && pod install && cd ..
+```
+
+3. Start Metro bundler:
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+4. Run on device/simulator:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+**iOS:**
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+**Android:**
+```bash
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Navigation Implementation Details
 
-## Step 3: Modify your app
+### App.tsx
+- Wrapped with `SafeAreaProvider` and `NavigationContainer`
+- Uses `createNativeStackNavigator` for smooth native transitions
+- Starts with `LoginScreen` as the initial route
+- All screens have `headerShown: false` for custom headers
 
-Now that you have successfully run the app, let's make changes!
+### LoginScreen
+- Main authentication screen
+- "Forgot Password?" button navigates to `ForgotPasswordScreen`
+- Uses React Native Paper components for consistent styling
+- Responsive design with proper scaling
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### ForgotPasswordScreen
+- Password recovery screen with email input
+- Back button (arrow-left icon) returns to `LoginScreen`
+- "Send OTP" button for password reset functionality
+- Consistent theme with LoginScreen
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## Dependencies
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+- `@react-navigation/native`: Core navigation library
+- `@react-navigation/native-stack`: Native stack navigator
+- `react-native-screens`: Native screen components
+- `react-native-safe-area-context`: Safe area handling
+- `react-native-paper`: Material Design components
+- `react-native-gesture-handler`: Gesture handling
 
-## Congratulations! :tada:
+## Code Quality
 
-You've successfully run and modified your React Native App. :partying_face:
+- ✅ Functional components with hooks
+- ✅ Proper TypeScript typing
+- ✅ Separated styles from component logic
+- ✅ Clean imports and exports
+- ✅ Consistent naming conventions
+- ✅ Proper error handling structure
 
-### Now what?
+## Future Enhancements
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Add authentication state management
+- Implement actual API calls for login/forgot password
+- Add form validation and error handling
+- Implement biometric authentication
+- Add dark mode support
+- Add unit tests for navigation flows
 
-# Troubleshooting
+## Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+If you encounter navigation issues:
 
-# Learn More
+1. Ensure all navigation dependencies are properly installed
+2. Check that `react-native-screens` is linked correctly
+3. Verify iOS pods are installed (`cd ios && pod install`)
+4. Clear Metro cache (`npm start -- --reset-cache`)
+5. Rebuild the app after dependency changes
 
-To learn more about React Native, take a look at the following resources:
+## Contributing
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. Follow the existing code structure
+2. Use TypeScript for all new files
+3. Maintain consistent styling with React Native Paper
+4. Add proper navigation types for new screens
+5. Test navigation flows on both platforms
+>>>>>>> 266b643 (splassh screen-login-homescreen-otp-create-password-forgot-passowrd-veriyemailadress)
