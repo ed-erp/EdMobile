@@ -216,7 +216,7 @@ const CreatePasswordScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F6F2FF" />
+      <StatusBar barStyle="dark-content" backgroundColor="#F6F2FF" /> 
       
       {/* Header with back button */}
       <View style={styles.header}>
