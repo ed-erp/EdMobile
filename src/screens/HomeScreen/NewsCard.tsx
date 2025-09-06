@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 
-interface RemarkCardProps {}
+interface NewsCardProps {}
 
-const RemarkCard: React.FC<RemarkCardProps> = () => {
+const NewsCard: React.FC<NewsCardProps> = () => {
   const schoolNews = {
     title: 'Winter Break Notice',
     description:
@@ -32,7 +32,6 @@ const RemarkCard: React.FC<RemarkCardProps> = () => {
               {schoolNews.description}
             </Text>
 
-            {/* Footer row for time + link */}
             <View style={styles.footerRow}>
               <Text style={styles.timeText}>{schoolNews.time}</Text>
               <Text style={styles.viewMoreText}>View more</Text>
@@ -106,4 +105,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RemarkCard;
+export default NewsCard;

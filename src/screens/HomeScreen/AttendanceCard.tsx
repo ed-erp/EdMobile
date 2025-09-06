@@ -5,8 +5,7 @@ import CheckBoxIcon from '../../icons/CheckBoxIcon';
 import CircleIcon from '../../icons/CircleIcon';
 import CheckBoxCrossIcon from '../../icons/CheckboxCrossIcon';
 
-interface AttendanceCardProps {
-}
+interface AttendanceCardProps {}
 
 const AttendanceCard: React.FC<AttendanceCardProps> = () => {
   const theme = useTheme();
