@@ -1,19 +1,20 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PaperProvider } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
 import { theme } from './src/styles/theme';
-import RootNavigator from './src/navigation/RootNavigator';
+import AppNavigator from './src/navigation/AppNavigator';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
 
 function App() {
   return (
-    <PaperProvider theme={theme}>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <RootNavigator />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </PaperProvider>
+    <Provider store={store}>
+      <PaperProvider theme={theme}>
+        <SafeAreaProvider>
+          <AppNavigator />
+        </SafeAreaProvider>
+      </PaperProvider>
+    </Provider>
   );
 }
 export default App;
